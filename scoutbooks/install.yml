@@ -1,0 +1,23 @@
+ - hosts: all
+   tasks:
+    - name: install tomcat
+      apt: name=tomcat7 state=present
+      sudo: yes
+    - name: install conky
+      apt: name=conky state=present
+      sudo: yes
+    - name: move conky config
+      copy: src=~/.conkyrc dest=~/.conkyrc
+    - name: start conky
+      shell: conky &
+    - name: install emacs
+      apt: name=emacs24 state=present
+      sudo: yes
+    - name: install epiphany
+      apt: name=epiphany-browser state=present
+      sudo: yes
+    - name: install git
+      apt: name=git state=present
+      sudo: yes
+    - name: date
+      shell: 'echo -n "Connection @ " >> connection.txt; date >> connection.txt; echo ": Cheched instalation of Tomcat and Conky, updated Conky config"'

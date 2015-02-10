@@ -1,0 +1,6 @@
+ - hosts: all
+   tasks:
+    - name: test connection
+      ping:
+    - name: date
+      shell: 'echo -n "Connection @ " >> connection.txt; date >> connection.txt; echo ": Tested Connection"'

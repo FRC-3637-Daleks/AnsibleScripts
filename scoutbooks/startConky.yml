@@ -1,0 +1,6 @@
+ - hosts: all
+   tasks:
+    - name: start conky
+      shell: conky &
+    - name: date
+      shell: 'echo -n "Connection @ " >> connection.txt; date >> connection.txt; echo ": Started Conky"'

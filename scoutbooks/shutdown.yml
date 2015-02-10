@@ -1,0 +1,7 @@
+ - hosts: all
+   tasks:
+    - name: reboot
+      shell: /sbin/halt
+      sudo: yes
+    - name: date
+      shell: 'echo -n "Connection @ " >> connection.txt; date >> connection.txt; echo ": Rebooted"'

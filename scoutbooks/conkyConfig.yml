@@ -1,0 +1,10 @@
+ - hosts: all
+   tasks:
+    - name: update conky config
+      copy: src=~/.conkyrc dest=~/.conkyrc
+    - name: stop conky
+      shell: killall conky
+    - name: start conky
+      shell: conky &
+    - name: date
+      shell: 'echo -n "Connection @ " >> connection.txt; date >> connection.txt; echo ": Updated Conky config"'
